@@ -1,0 +1,157 @@
+# .bashrc_exports
+
+########################################################################
+# Author(s):   Michael J. Surbey (msurbey@redhat.com)
+# Description:
+#
+#   1) .bashrc_exports can be used to override variables specified in
+#      the .bashrc configuration file.
+#
+# [NOTE]: When using GNU screen, execution occurs in the following order.
+#
+#   1) .bash_profile is loaded the first time you login, and should be used
+#      only for paths and environmental settings.
+#
+#   2) .bashrc is loaded in each subsequent screen, and should be used for
+#      aliases and things like writing to .bash_eternal_history.
+#
+# [INFO]: Do 'man bashrc' for further information or visit http://bit.ly/1KDUkAR.
+#
+# [NOTE]: When bash starts, it executes the commands in a variety of different scripts.
+#
+#   1) When Bash is invoked as an interactive login shell, it first reads
+#      and executes commands from the file /etc/profile, if that file
+#      exists. After reading that file, it looks for $HOME/.bash_profile,
+#      $HOME/.bash_login, and $HOME/.profile, in that order, and reads and executes
+#      commands from the first one that exists and is readable.
+#
+#   2) When a login shell exits, Bash reads and executes commands from the
+#      file $HOME/.bash_logout, if it exists.
+#
+#   3) When an interactive shell that is not a login shell is started
+#      (e.g. a GNU screen session), Bash reads and executes commands from
+#      $HOME/.bashrc, if that file exists. This may be inhibited by using the
+#      --norc option. The --rcfile file option will force Bash to read and
+#      execute commands from file instead of $HOME/.bashrc.
+#
+# Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+########################################################################
+
+# ----------------------------------------------------------------------
+# Devel
+# ----------------------------------------------------------------------
+# export WORKSPACE=$HOME/workspace
+
+# ----------------------------------------------------------------------
+# Brew
+# ----------------------------------------------------------------------
+# export HOMEBREW_CASK_OPTS=
+
+# ----------------------------------------------------------------------
+# Emacs
+# ----------------------------------------------------------------------
+# export EDITOR='emacs -nw'
+# export VISUAL='emacs -nw'
+
+# ----------------------------------------------------------------------
+# Node
+# ----------------------------------------------------------------------
+# export NPM_CONFIG_PREFIX=
+# export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
+# export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
+
+# ----------------------------------------------------------------------
+# Git
+# ----------------------------------------------------------------------
+export GIT_AUTHOR_NAME=Michael Surbey
+export GIT_COMMITTER_NAME=ecwpz91
+export GIT_COMMITTER_EMAIL=ecwpz91@users.noreply.github.com
+export GITHUB_USER=ecwpz91
+export GIT_AUTHOR_EMAIL=msurbey@redhat.com
+
+# ----------------------------------------------------------------------
+# Vagrant
+# ----------------------------------------------------------------------
+# export SUB_USERNAME=
+# export SUB_PASSWORD=
+# export VAGRANT_DEFAULT_PROVIDER=
+
+# ----------------------------------------------------------------------
+# Go
+# ----------------------------------------------------------------------
+# export GOPATH=
+# export PATH=$GOPATH/bin:$PATH
+
+# ----------------------------------------------------------------------
+# Maven
+# ----------------------------------------------------------------------
+# export MAVEN_OPTS="-Xms256m -Xmx512m"
+# export USER_MEM_ARGS="-Xmx1024m -XX:MaxPermSize=256m"
+# export MAVEN_HOME=
+# export PATH=$MAVEN_HOME/bin:$PATH
+
+# ----------------------------------------------------------------------
+# Gradle
+# ----------------------------------------------------------------------
+# export GRADLE_OPTS="-Dorg.gradle.daemon=true"
+# export GRADLE_HOME=
+# export PATH=$GRADLE_HOME/bin:$PATH
+
+# ----------------------------------------------------------------------
+# Java
+# ----------------------------------------------------------------------
+# export USER_MEM_ARGS="-Xms32m -Xmx200m -XX:MaxPermSize=350m"
+# export JAVA_HOME=
+# export PATH=$JAVA_HOME/bin:$PATH
+
+# ----------------------------------------------------------------------
+# Tomcat
+# ----------------------------------------------------------------------
+# export TOMCAT_HOME=
+# export PATH=$TOMCAT_HOME/bin:$PATH
+
+# ----------------------------------------------------------------------
+# AWS
+# ----------------------------------------------------------------------
+# export AWS_ACCESS_KEY_ID=
+# export AWS_SECRET_ACCESS_KEY=
+# export AWS_DEFAULT_REGION=
+# export AWS_DEFAULT_PROFILE=
+
+# ----------------------------------------------------------------------
+# Android
+# ----------------------------------------------------------------------
+# export ANDROID_HOME=
+# export PATH=$ANDROID_HOME/platform-tools:$PATH
+# export PATH=$ANDROID_HOME/tools:$PATH
+
+# ----------------------------------------------------------------------
+# Android Studio
+# ----------------------------------------------------------------------
+# export IBUS_ENABLE_SYNC_MODE=1
+
+# ----------------------------------------------------------------------
+# Minishift
+# ----------------------------------------------------------------------
+# export MINISHIFT_VM_DRIVER=
+# export MINISHIFT_USERNAME=
+# export MINISHIFT_PASSWORD=
+
+# ----------------------------------------------------------------------
+# Docker
+# ----------------------------------------------------------------------
+# export DOCKER_USERNAME=
+# export DOCKER_PASSWORD=
+# export DOCKER_REGISTRY=
+
+# ----------------------------------------------------------------------
+# Ant
+# ----------------------------------------------------------------------
+# export ANT_HOME=
+# export PATH=$ANT_HOME/bin:$PATH
+
+# ----------------------------------------------------------------------
+# BFG
+# ----------------------------------------------------------------------
+# export BFG_HOME=
+# export BFG_RELEASE=
