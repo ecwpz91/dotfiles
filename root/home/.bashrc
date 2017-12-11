@@ -2,19 +2,20 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+ . /etc/bashrc
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+# User specific definitions
+set -o noclobber
 
-# User specific aliases and functions
-if [ -f $HOME/.bashrc_exports ]; then
-	# shellcheck source=/dev/null
-  source $HOME/.bashrc_exports
+if [ -f $HOME/.bash_export ]; then
+ source $HOME/.bash_export
 fi
 
-if [ -f $HOME/.bashrc_aliases ]; then
-	# shellcheck source=/dev/null
-  source $HOME/.bashrc_aliases
+if [ -f $HOME/.bash_alias ]; then
+ source $HOME/.bash_alias
+fi
+
+if [ -f $HOME/.bash_complete ]; then
+ source $HOME/.bash_complete
 fi
