@@ -1,14 +1,14 @@
 # .bash_complete
 
 # ----------------------------------------------------------------------
-# OC
+# OpenShift CLI Client
 # ----------------------------------------------------------------------
 if [ -f $HOME/.local/bin/oc.sh ]; then
  source $HOME/.local/bin/oc.sh
 fi
 
 # ----------------------------------------------------------------------
-# OC-Cluster
+# OpenShift CLI Script
 # ----------------------------------------------------------------------
 if [ -f $HOME/.local/bin/oc-cluster.sh ]; then
  source $HOME/.local/bin/oc-cluster.sh
