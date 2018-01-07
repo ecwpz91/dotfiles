@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-function diruse() {
+function tlapsed() {
  local FCN="${FUNCNAME[0]}"
+ local DES="A time elapsed calculator"
 
  #----------------------------------------------------
  # Semantic Versioning
@@ -28,10 +29,10 @@ function diruse() {
 
  get_usage() {
   cat <<EOF
-Usage: ${FCN:-} [OPTIONS] DIRECTORY(IES)
+Usage: ${FCN:-} [OPTIONS] START_TIME
        ${FCN:-} [ --help | -v | --version ]
 
-A report file system disk space usage shorthand.
+${DES:-}
 
 Options:
 
@@ -70,8 +71,6 @@ EOF
  main() {
   local OPTARG OPTIND opt debug targs mycmd
 
-  local start="$( date +%s )"
-
   while getopts ":-:Dv" opt; do
    case ${opt} in
     -  ) case "${OPTARG:-}" in
@@ -93,7 +92,7 @@ EOF
 
   # Process target args
   for input in "${@}"; do
-   [ ${debug:-} ] && debug_msg "RUN"
+   [ ${debug:-} ] && debug_msg "Run"
 
    if [[ "${input}" != "${1}" ]]; then
     printf "\n"; [ ${debug:-} ] && debug_msg "${input:-}"
@@ -101,20 +100,16 @@ EOF
     [ ${debug:-} ] && debug_msg "${input:-}"
    fi
 
-   targs="$( cd -P "$( dirname ${input:-} )" && pwd )"
+   targs="$(date +%s)"
 
    [ ${debug:-} ] && debug_msg "${targs:-}"
 
-   targs="$(get_absolute_path ${targs:-} )"
+   mycmd=""$(($(date +%s) - ${input:-}))""
 
-   [ ${debug:-} ] && debug_msg "${targs:-}"
-
-   mycmd="$(du -h --max-depth=1 ${targs:-} 2>/dev/null | sort -nr)"
-
-   printf "%s\n" "${mycmd:-}"
+   printf "%s seconds\n" "${mycmd:-}"
   done
 
-  [ ${debug:-} ] && debug_msg "END"
+  [ ${debug:-} ] && debug_msg "End"
  }
 
  main "${@}"

@@ -2,7 +2,7 @@
 
 ANSIBLE=$HOME/.local/bin/ansible
 
-function ansible-jq() {
+function jqansib() {
  local OPTIND opt maj_ver min_ver pat_ver sem_ver mod_args
 
  maj_ver="1"

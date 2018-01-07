@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-function install-packer() {
+
+function packin() {
  [[ "$(uname -m)" == "x86_64" ]] \
  && ost="$(uname)";ost="${ost,,}_amd64" \
  && app='packer' \
