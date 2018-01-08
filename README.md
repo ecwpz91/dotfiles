@@ -1,4 +1,8 @@
-# Codex
+# Dotfiles
+
+A portable collection of configs and scripts, otherwise known as a codex.
+
+## What is a codex?
 
 A [codex][1] is a book constructed of a number of sheets of paper, vellum, papyrus, or similar materials, with hand-written contents.
 
