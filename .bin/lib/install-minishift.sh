@@ -14,7 +14,6 @@ install-minishift(){
  # && sudo chmod +x /usr/local/bin/docker-machine-driver-kvm
 
  # Check if oc exists, if not install locally
-
  curl -L -O 'https://mirror.openshift.com/pub/openshift-v3/clients/3.6.173.0.21/linux/oc.tar.gz' | tar -xvzf - -C $HOME/.local/bin --strip 1 \
  && chmod +x $HOME/.local/bin/oc \
  && rm -rf $HOME/.local/bin/oc.sh &>/dev/null \
