@@ -114,7 +114,7 @@ DIRPATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 ABSPATH="$(get_absolute_path "$DIRPATH/..")"
 PROJECT="${PROJECT:-"${ABSPATH}"}"
 PROJECT_NAME="${PROJECT_NAME:-"${PROJECT##*/}"}"
-LIBPATH="${PROJECT:-"${ABSPATH}"}/bin/lib"
+LIBPATH="${PROJECT:-"${ABSPATH}"}/.bin/lib"
 
 # Source libraries
 load_library "${LIBPATH}"
