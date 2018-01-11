@@ -1,4 +1,4 @@
-install-minishift-binary(){
+install-user-cdk(){
  local bincdk=${1:-'HOME/Downloads/cdk-3.2.0-1-minishift*'}
  local cdkuri="https://developers.redhat.com/download-manager/file/cdk-3.2.0-1-minishift-linux-amd64"
 
