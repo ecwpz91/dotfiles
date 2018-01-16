@@ -12,7 +12,7 @@ make-bash-script() {
 
  usage() {
 	  cat <<EOF
-Usage: ${FCN:-} [FILENAME]
+Usage: ${fcn:-} [FILENAME]
 
 ${des:-}
 
