@@ -8,10 +8,17 @@ if [ -f $HOME/.local/bin/oc.sh ]; then
 fi
 
 # ----------------------------------------------------------------------
-# OpenShift CLI Script
+# OpenShift CLI Wrapper Script
 # ----------------------------------------------------------------------
 if [ -f $HOME/.local/bin/oc-cluster.sh ]; then
  source $HOME/.local/bin/oc-cluster.sh
+fi
+
+# ----------------------------------------------------------------------
+# OpenShift S2I Client
+# ----------------------------------------------------------------------
+if [ -f $HOME/.local/bin/s2i.sh ]; then
+ source $HOME/.local/bin/s2i.sh
 fi
 
 # ----------------------------------------------------------------------
