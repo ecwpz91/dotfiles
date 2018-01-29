@@ -1,6 +1,6 @@
-function git-excludes() {
+git-excludes() {
  usage() {
-  printf "%s\n" "Usage: git-excl-aux [DIRECTORY] [PATTERN(S)]" >&2; return 1;
+  printf "%s\n" "Usage: git-excludes [DIRECTORY] PATTERN(S)" >&2; return 1;
  }
 
  get-base-dir() {
