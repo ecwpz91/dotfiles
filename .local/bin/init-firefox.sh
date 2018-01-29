@@ -1,5 +1,5 @@
-init-firefox() {
- upgrade-firefox() {
+init-firefox-quantum() {
+ upgrade() {
   sudo bash -c '[[ "$(uname -m)" == "x86_64" ]] \
               && ost="$(uname)";ost="${ost,,}64" \
               && dir="/opt";app="firefox";ver="latest" \
@@ -10,7 +10,7 @@ init-firefox() {
   '
  }
 
- install-firefox() {
+ desktop() {
   sudo bash -c 'OLD_DESKD="/usr/share/applications"
              OLD_DESKF="$OLD_DESKD/firefox.desktop"
 
@@ -55,7 +55,7 @@ fi
  }
 
  main() {
-  upgrade-firefox
+  upgrade
  }
 
  main "${@}"
