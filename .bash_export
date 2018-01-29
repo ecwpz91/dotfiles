@@ -34,7 +34,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # export VISUAL='emacs -nw'
 
 # ----------------------------------------------------------------------
-# Node
+# Node.js
 # ----------------------------------------------------------------------
 # export NPM_CONFIG_PREFIX=
 # export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
