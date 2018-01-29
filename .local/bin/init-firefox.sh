@@ -48,9 +48,15 @@ fi
   '
 
   systemctl restart gdm.service
-  
+
   # [NOTE] Keep in mind that restarting the service forcibly interrupts any
   # currently running GNOME session of any desktop user who is logged in. This
   # can result in users losing unsaved data.
  }
+
+ main() {
+  upgrade-firefox
+ }
+
+ main "${@}"
 }
