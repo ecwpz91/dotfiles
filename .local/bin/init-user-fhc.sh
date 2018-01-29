@@ -1,6 +1,6 @@
 init-user-fhc() {
 
- bashexp(){
+ envs(){
   cat <<EOF
   # ----------------------------------------------------------------------
   # Node.js
@@ -15,7 +15,7 @@ EOF
   [[ ! $(shopt checkhash &>/dev/null) ]] && shopt -s checkhash; flagset=true
 
   if ! hash n 2>/dev/null ; then
-   echo "$(bashexp)" >> $HOME/.bashrc
+   echo "$(envs)" >> $HOME/.bashrc
    source $HOME/.bashrc
    curl -L https://git.io/n-install | bash
   fi

@@ -29,7 +29,7 @@ init-user-cdk(){
  && minishift config set memory 4096 &>/dev/null \
  && minishift config set cpus 2  &>/dev/null
 
- get_export() {
+ envs() {
  cat <<EOF
 # ----------------------------------------------------------------------
 # Minishift
@@ -41,5 +41,5 @@ init-user-cdk(){
 EOF
  }
 
- echo "$(get_export)" >> $HOME/.bashrc
+ echo "$(envs)" >> $HOME/.bashrc
 }
