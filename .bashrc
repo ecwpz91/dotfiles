@@ -5,8 +5,7 @@ if [ -f /etc/bashrc ]; then
  . /etc/bashrc
 fi
 
-# User specific definitions
-set -o noclobber checkhash
+set -o noclobber
 
 if [ -f $HOME/.bash_export ]; then
  source $HOME/.bash_export
