@@ -1,26 +1,23 @@
 # .bash_export
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# ----------------------------------------------------------------------
+# Systemctl
+# ----------------------------------------------------------------------
 # export SYSTEMD_PAGER=
 
 # ----------------------------------------------------------------------
 # POSIX
 # ----------------------------------------------------------------------
-# export PS1="\[\033[m\][\[\033[36m\]\u\[\033[33m\]@\[\033[32m\]\h\[\033[m\] \[\033[35m\]\W\[\033[m\]]\\$ "
-# export PS1="\[\033[36m\]\u\[\033[m\]\@\[\033[32m\]\h\:\[\033[33;1m\]\w\[\033[m\]\$ "
-# export PS1="\[\033[0;31m\]\t \[\033[m\][\[\033[32m\]\h\[\033[m\]] \[\033[35m\]\W\[\033[m\]$ "
-# export PS1="\[\033[0;31m\]\t \[\033[m\][\[\033[32m\]\w\[\033[m\]] \[\033[m\]\\$ "
-# export PS1="\[\033[0;31m\]\t \[\033[m\][\[\033[32m\]\W\[\033[m\]] \[\033[m\]\\$ "
 export PS1="\[\033[0;31m\]\t \[\033[m\]\\$ "
-# export PS2='continue-> '
+export PS2='continue-> '
 export PS4='$0.$LINENO+ '
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+export CLICOLOR='1'
+export LSCOLORS='ExFxBxDxCxegedabagacad'
 
 # ----------------------------------------------------------------------
 # Devel
 # ----------------------------------------------------------------------
-# export WORKSPACE=$HOME/workspace
+# export WORKSPACE="$HOME/workspace"
 
 # ----------------------------------------------------------------------
 # Brew
@@ -36,6 +33,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # ----------------------------------------------------------------------
 # Node.js
 # ----------------------------------------------------------------------
+# export NODE_NO_READLINE='1'
 # export NPM_CONFIG_PREFIX=
 # export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 # export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
@@ -43,11 +41,11 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # ----------------------------------------------------------------------
 # Git
 # ----------------------------------------------------------------------
-export GIT_AUTHOR_NAME=ecwpz91
-export GIT_COMMITTER_NAME=ecwpz91
-export GIT_COMMITTER_EMAIL=ecwpz91@users.noreply.github.com
-export GITHUB_USER=ecwpz91
-export GIT_AUTHOR_EMAIL=ecwpz91@users.noreply.github.com
+export GIT_AUTHOR_NAME='ecwpz91'
+export GIT_COMMITTER_NAME='ecwpz91'
+export GIT_COMMITTER_EMAIL='ecwpz91@users.noreply.github.com'
+export GITHUB_USER='ecwpz91'
+export GIT_AUTHOR_EMAIL='ecwpz91@users.noreply.github.com'
 
 # ----------------------------------------------------------------------
 # Vagrant
@@ -65,22 +63,22 @@ export GIT_AUTHOR_EMAIL=ecwpz91@users.noreply.github.com
 # ----------------------------------------------------------------------
 # Maven
 # ----------------------------------------------------------------------
-# export MAVEN_OPTS="-Xms256m -Xmx512m"
-# export USER_MEM_ARGS="-Xmx1024m -XX:MaxPermSize=256m"
+# export MAVEN_OPTS='-Xms256m -Xmx512m'
+# export USER_MEM_ARGS=-Xmx1024m -XX:MaxPermSize=256m
 # export MAVEN_HOME=
 # export PATH=$MAVEN_HOME/bin:$PATH
 
 # ----------------------------------------------------------------------
 # Gradle
 # ----------------------------------------------------------------------
-# export GRADLE_OPTS="-Dorg.gradle.daemon=true"
+# export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 # export GRADLE_HOME=
 # export PATH=$GRADLE_HOME/bin:$PATH
 
 # ----------------------------------------------------------------------
 # Java
 # ----------------------------------------------------------------------
-# export USER_MEM_ARGS="-Xms32m -Xmx200m -XX:MaxPermSize=350m"
+# export USER_MEM_ARGS='-Xms32m -Xmx200m -XX:MaxPermSize=350m'
 # export JAVA_HOME=
 # export PATH=$JAVA_HOME/bin:$PATH
 
@@ -108,7 +106,7 @@ export GIT_AUTHOR_EMAIL=ecwpz91@users.noreply.github.com
 # ----------------------------------------------------------------------
 # Android Studio
 # ----------------------------------------------------------------------
-# export IBUS_ENABLE_SYNC_MODE=1
+# export IBUS_ENABLE_SYNC_MODE='1'
 
 # ----------------------------------------------------------------------
 # Minishift
