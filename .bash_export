@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# .bash_export
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
