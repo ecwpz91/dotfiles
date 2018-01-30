@@ -1,4 +1,4 @@
-# .bash_export
+#!/usr/bin/env bash
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -43,11 +43,11 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # ----------------------------------------------------------------------
 # Git
 # ----------------------------------------------------------------------
-export GIT_AUTHOR_NAME=Michael Surbey
+export GIT_AUTHOR_NAME=ecwpz91
 export GIT_COMMITTER_NAME=ecwpz91
 export GIT_COMMITTER_EMAIL=ecwpz91@users.noreply.github.com
 export GITHUB_USER=ecwpz91
-export GIT_AUTHOR_EMAIL=msurbey@redhat.com
+export GIT_AUTHOR_EMAIL=ecwpz91@users.noreply.github.com
 
 # ----------------------------------------------------------------------
 # Vagrant
