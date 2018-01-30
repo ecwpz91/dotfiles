@@ -12,7 +12,7 @@ elapsed() {
  local REL="${VER}.${PAT}"
 
  # Check if git exists
- args=( $(hash git 2>/dev/null) ); [ "${args[@]}" ]; \
+ args=( $(type git &>/dev/null) ); [ "${args[@]}" ]; \
  local BLD="$(git show -s --format=%h 2>/dev/null)" \
  && unset args
 
