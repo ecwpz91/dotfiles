@@ -35,7 +35,7 @@ export LSCOLORS='ExFxBxDxCxegedabagacad'
 # ----------------------------------------------------------------------
 # export NODE_NO_READLINE='1'
 # export NPM_CONFIG_PREFIX=
-# export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
+# export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
 # export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
 
 # ----------------------------------------------------------------------
@@ -58,7 +58,7 @@ export GIT_AUTHOR_EMAIL='ecwpz91@users.noreply.github.com'
 # Go
 # ----------------------------------------------------------------------
 # export GOPATH=
-# export PATH=$GOPATH/bin:$PATH
+# export PATH="$GOPATH/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # Maven
@@ -66,27 +66,27 @@ export GIT_AUTHOR_EMAIL='ecwpz91@users.noreply.github.com'
 # export MAVEN_OPTS='-Xms256m -Xmx512m'
 # export USER_MEM_ARGS=-Xmx1024m -XX:MaxPermSize=256m
 # export MAVEN_HOME=
-# export PATH=$MAVEN_HOME/bin:$PATH
+# export PATH="$MAVEN_HOME/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # Gradle
 # ----------------------------------------------------------------------
 # export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 # export GRADLE_HOME=
-# export PATH=$GRADLE_HOME/bin:$PATH
+# export PATH="$GRADLE_HOME/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # Java
 # ----------------------------------------------------------------------
 # export USER_MEM_ARGS='-Xms32m -Xmx200m -XX:MaxPermSize=350m'
 # export JAVA_HOME=
-# export PATH=$JAVA_HOME/bin:$PATH
+# export PATH="$JAVA_HOME/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # Tomcat
 # ----------------------------------------------------------------------
 # export TOMCAT_HOME=
-# export PATH=$TOMCAT_HOME/bin:$PATH
+# export PATH="$TOMCAT_HOME/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # AWS
@@ -100,8 +100,8 @@ export GIT_AUTHOR_EMAIL='ecwpz91@users.noreply.github.com'
 # Android
 # ----------------------------------------------------------------------
 # export ANDROID_HOME=
-# export PATH=$ANDROID_HOME/platform-tools:$PATH
-# export PATH=$ANDROID_HOME/tools:$PATH
+# export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# export PATH="$ANDROID_HOME/tools:$PATH"
 
 # ----------------------------------------------------------------------
 # Android Studio
@@ -126,7 +126,7 @@ export GIT_AUTHOR_EMAIL='ecwpz91@users.noreply.github.com'
 # Ant
 # ----------------------------------------------------------------------
 # export ANT_HOME=
-# export PATH=$ANT_HOME/bin:$PATH
+# export PATH="$ANT_HOME/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # BFG
