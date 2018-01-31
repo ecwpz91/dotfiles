@@ -1,9 +1,7 @@
-# See http://www.etalabs.net/sh_tricks.html
-
-echo () (
+echo() {
  fmt=%s end=\\n IFS=" "
 
- while [ $# -gt 1 ] ; do
+ while [ "$#" -gt 1 ] ; do
   case "$1" in
    [!-]*|-*[!ne]*) break ;;
    *ne*|*en*) fmt=%b end=;;
@@ -13,5 +11,5 @@ echo () (
   shift
  done
 
- [[ $fmt == %b ]] && printf "%b$end" "$*" || printf "%s$end" "$*"
-)
+ [[ "$fmt" == %b ]] && printf "%b$end" "$*" || printf "%s$end" "$*"
+}
