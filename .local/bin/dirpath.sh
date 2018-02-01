@@ -1,5 +1,5 @@
 dirpath() {
- local relative_path=$1; shift || { printf "%s\n" "Usage: get-base-dir [DIRECTORY]" >&2; return 1; }
+ local relative_path=$1; shift || return 1
  local absolute_path
 
  if pushd "$relative_path" &>/dev/null; then
