@@ -1,9 +1,18 @@
 git-remote-url() {
- rmt=$1; shift || { printf "%s\n" "Usage: git-remote-url [REMOTE]" >&2; return 1;}
- rmt=$1; shift || { printf "%s\n" "Error: not a valid remote name" >&2; return 1;}; \
+ local rmt=$1; shift || { printf "Usage: git-remote-url [REMOTE]\n" >&2; return 1; }
+ local url
 
- url=`git config --get remote.${rmt}.url` || { printf "%s\n" "Error: not a valid remote name" >&2; return 1;}; \
- [[ $url == git@* ]] && { url="https://github.com/${url##*:}" >&2; }; \
- { url="${url%%.git}" >&2; }; \
+ if ! git config --get remote.${rmt}.url &>/dev/null; then
+  printf "%s\n" "Error: not a valid remote name" && return 1
+  # Verify remote using 'git remote -v' command
+ fi
+
+ url=`git config --get remote.${rmt}.url`
+
+ # Parse remote if local clone used SSH checkout
+ [[ "$url" == git@* ]] \
+ && { url="https://github.com/${url##*:}" >&2; }; \
+ { url="${url%%.git}" >&2; };
+
  printf "%s\n" "$url"
 }
