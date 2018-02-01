@@ -4,7 +4,7 @@
 # AWS CLI Client
 # ----------------------------------------------------------------------
 if [ -f "$HOME/.local/bin/aws_completer" ]; then
- complete -C "$HOME/.local/bin/aws_completer" aws
+ source "$HOME/.local/bin/aws_completer"
 fi
 
 # ----------------------------------------------------------------------
