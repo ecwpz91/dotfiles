@@ -1,5 +1,5 @@
 git-remote-url() {
- local rmt=$1; shift || { printf "Usage: git-remote-url [REMOTE]\n" >&2; return 1; }
+ local rmt=$1; shift || return 1
  local url
 
  if ! git config --get remote.${rmt}.url &>/dev/null; then
