@@ -2,4 +2,4 @@
 # export GOROOT="$HOME/.go"
 # export GOPATH="$HOME/gocode"
 # export GOBIN="$HOME/.local/bin"
-# export PATH="$GOROOT:$PATH"
+# export PATH="$GOROOT/bin:$PATH"
