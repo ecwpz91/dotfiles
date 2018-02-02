@@ -1,20 +1,4 @@
 envs() {
- absolute_path() {
-  local relative_path="$1"
-  local get_absolute_path
-
-  pushd "${relative_path}" >/dev/null
-  relative_path="$( pwd )"
-  if [[ -h "${relative_path}" ]]; then
-   get_absolute_path="$( readlink "${relative_path}" )"
-  else
-   get_absolute_path="${relative_path}"
-  fi
-  popd >/dev/null
-
-  echo "${get_absolute_path}"
- }
-
  echo "$(basename "`test -L ${BASH_SOURCE[0]} \
  && readlink ${BASH_SOURCE[0]} \
  || echo ${BASH_SOURCE[0]}`")"
@@ -34,5 +18,16 @@ envs() {
  printf "THIS_NAME \xE2\x9E\xA1 %s\n" "${THIS_NAME}"
  printf "THIS_TYPE \xE2\x9E\xA1 %s\n" "${THIS_TYPE}"
  printf "THIS_RELATIVE_PATH \xE2\x9E\xA1 %s\n" "${THIS_RELATIVE_PATH}"
+
+ pushd "${THIS_RELATIVE_PATH}" &>/dev/null
+
+ if [ -h "$( pwd )" ]; then
+  THIS_ABSOLUTE_PATH="$( readlink ${THIS_RELATIVE_PATH} )"
+ else
+  THIS_ABSOLUTE_PATH="${THIS_RELATIVE_PATH}"
+ fi
+
+ popd &>/dev/null
+
  printf "THIS_ABSOLUTE_PATH \xE2\x9E\xA1 %s\n" "${THIS_ABSOLUTE_PATH}"
 }

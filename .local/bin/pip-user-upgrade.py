@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # https://stackoverflow.com/questions/25805200/update-user-installed-packages-with-pip
 
 import os
@@ -21,5 +19,4 @@ if len(homepkg) == 0:
 # --no-deps is required because --upgrade by default is recursive and would try
 # to update packages that are not from homedir (e.g. from /usr).
 
-subprocess.call(['pip', 'install', '--user',
-                 '--upgrade', '--no-deps'] + homepkg)
+subprocess.call(['pip', 'install', '--user', '--upgrade', '--no-deps'] + homepkg)

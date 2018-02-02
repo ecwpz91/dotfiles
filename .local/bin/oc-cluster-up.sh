@@ -1,5 +1,3 @@
 oc-cluster-up() {
- local ipaddr=${1:-127.0.0.1}
-
- oc cluster up --public-hostname $ipaddr.xip.io --routing-suffix $ipaddr.xip.io
+ oc cluster up --public-hostname "${1:-127.0.0.1}.xip.io" --routing-suffix "${1:-127.0.0.1}.xip.io"
 }
