@@ -1,0 +1,2 @@
+# export GOROOT=
+# export PATH="${GOROOT:-/usr/local/go/bin}:$PATH"

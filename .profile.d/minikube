@@ -1,0 +1,1 @@
+# [ -s "$HOME/.local/bin/minikube.sh" ] && source "$HOME/.local/bin/minikube.sh"
