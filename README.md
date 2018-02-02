@@ -10,7 +10,7 @@ Commonly found on Unix-like systems, they provide user specific customization, a
 .bash_profile (read and executed only by login)
 .bash_login
 .profile
-.bashrc (read and executed only by a sub-shell)
+.bashrc (read and executed only by a child process)
 .bash_logout
 ```
 
