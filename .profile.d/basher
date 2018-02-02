@@ -1,0 +1,2 @@
+# export BASHERHOME="$HOME/.local/sh"
+# export PATH="$BASHERHOME:$PATH"
