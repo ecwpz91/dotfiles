@@ -4,7 +4,7 @@ A [dotfile][1] (plural dotfiles) is generally any file whose name begins with a 
 
 Commonly found on Unix-like systems, they provide user specific customization, and are analogous to [Batman's utility belt][2].
 
-## bash Shell
+# `bash` Shell
 
 ```
 .bash_profile (read and executed only by login)
