@@ -1,0 +1,9 @@
+fnc=$1; shift || { printf "Usage: %s [FILENAME]\n" "${0##*/}" >&2; exit 1; }
+
+_OST="$(uname)";_OST="${_OST,,}"
+
+[ "$_OST" == 'darwin' ] \
+&& _OST="macOS"
+
+[ "$(uname -m)" == 'x86_64' ] \
+&& _BIT='64'
