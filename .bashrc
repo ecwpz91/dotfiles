@@ -8,6 +8,6 @@ set -o noclobber
 
 if [ -d "$HOME/.profile.d" ]; then
  ARR=( $HOME/.profile.d/* ) \
- && for i in "${ARR[@]}"; do . "${i}"; done \
+ && for i in "${ARR[@]}"; do . "$i"; done \
  && unset ARR
 fi
