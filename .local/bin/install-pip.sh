@@ -1,6 +1,4 @@
-pip-user-upgrade() {
- [ -z "$@" ] && return 1
-
+wget-pip() {
  if ! type pip &>/dev/null; then
   temp=$(mktemp -d) \
   && pushd "$temp" \
@@ -8,8 +6,4 @@ pip-user-upgrade() {
   && python get-pip.py --user \
   && popd && rm -rf "$temp"
  fi
-
- for pkg in "$@"; do
-  pip install --user --upgrade "$pkg"
- done
 }
