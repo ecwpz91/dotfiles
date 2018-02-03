@@ -1,0 +1,1 @@
+[ "$NODE_NO_READLINE" = '1' ] && alias rl_node="rlwrap node"
