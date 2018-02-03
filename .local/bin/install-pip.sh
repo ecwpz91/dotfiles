@@ -1,4 +1,4 @@
-wget-pip() {
+install-pip() {
  if ! type pip &>/dev/null; then
   temp=$(mktemp -d) \
   && pushd "$temp" \
