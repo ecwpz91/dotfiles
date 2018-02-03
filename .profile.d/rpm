@@ -1,1 +1,1 @@
-# alias rpmqa='rpm -qa --queryformat="%{NAME}\n" | sort -d'
+alias rpmqa='rpm -qa --queryformat="%{NAME}\n" | sort -d'

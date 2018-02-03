@@ -1,1 +1,0 @@
-# [ -s "$HOME/.local/bin/fhc.sh" ] && source "$HOME/.local/bin/fhc.sh"

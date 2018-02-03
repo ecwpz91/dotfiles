@@ -1,1 +1,0 @@
-# [ -s "$HOME/.local/bin/oc.sh" ] && source "$HOME/.local/bin/oc.sh"

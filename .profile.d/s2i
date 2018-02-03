@@ -1,1 +1,0 @@
-# [ -s "$HOME/.local/bin/s2i.sh" ] && source "$HOME/.local/bin/s2i.sh"

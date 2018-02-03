@@ -1,5 +1,5 @@
-# export GOMAXPROCS='1'
-# export GOROOT="$HOME/.go"
-# export GOPATH="$HOME/gocode"
-# export GOBIN="$HOME/.local/bin"
-# export PATH="$GOROOT/bin:$PATH"
+export GOMAXPROCS='1'
+export GOROOT="$HOME/.go"
+export GOPATH="$HOME/gocode"
+export GOBIN="$HOME/.local/bin"
+export PATH="$GOROOT/bin:$PATH"

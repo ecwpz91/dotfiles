@@ -1,4 +1,4 @@
-# export MAVEN_OPTS='-Xms256m -Xmx512m'
-# export USER_MEM_ARGS=-Xmx1024m -XX:MaxPermSize=256m
-# export MAVEN_HOME=
-# export PATH="$MAVEN_HOME/bin:$PATH"
+export MAVEN_OPTS='-Xms256m -Xmx512m'
+export USER_MEM_ARGS=-Xmx1024m -XX:MaxPermSize=256m
+export MAVEN_HOME=
+export PATH="$MAVEN_HOME/bin:$PATH"
