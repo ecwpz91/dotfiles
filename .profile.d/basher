@@ -1,2 +1,2 @@
-export BASHERHOME="$HOME/.local/sh"
-export PATH="$BASHERHOME:$PATH"
+export BASHER_HOME=
+export PATH=$BASHER_HOME:$PATH

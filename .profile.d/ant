@@ -1,2 +1,2 @@
 export ANT_HOME=
-export PATH="$ANT_HOME/bin:$PATH"
+export PATH=$ANT_HOME/bin:$PATH

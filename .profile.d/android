@@ -1,3 +1,4 @@
 export ANDROID_HOME=
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+# export IBUS_ENABLE_SYNC_MODE='1'

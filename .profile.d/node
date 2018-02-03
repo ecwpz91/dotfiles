@@ -1,5 +1,1 @@
-export NODE_NO_READLINE='1'
-export NPM_CONFIG_PREFIX=
-export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
-export N_PREFIX="$HOME/.n"
-export PATH="$N_PREFIX/bin:$PATH"
+# export NODE_NO_READLINE='1'

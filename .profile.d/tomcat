@@ -1,2 +1,2 @@
 export TOMCAT_HOME=
-export PATH="$TOMCAT_HOME/bin:$PATH"
+export PATH=$TOMCAT_HOME/bin:$PATH
