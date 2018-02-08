@@ -1,5 +1,6 @@
 export GOROOT=$HOME/.go
-export GOPATH=$HOME/.local/go
+export GOPATH=$HOME/.local/go/Projects
+export GOPATH=$HOME/.local/go/PublicPackages:$GOPATH
 export GOBIN=$HOME/.local/bin
 export PATH=$GOROOT/bin:$PATH
 # export GOMAXPROCS='1'
