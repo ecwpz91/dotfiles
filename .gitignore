@@ -2,5 +2,4 @@ profile_tasks.pyc
 vault
 .go/PublicPackages/
 .ansible/facts/
-.ansible/inventory/ec2.ini
-.ansible/inventory/ec2.py
+.ansible/tmp/
