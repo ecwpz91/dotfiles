@@ -1,0 +1,20 @@
+---
+
+# This playbook is used for liveuser
+#
+#  Run playbook:
+#    ansible-playbook liveuser.yml
+#
+#  Example:
+#    ansible-playbook liveuser.yml
+
+- name: Liveuser
+  connection: local
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - name: Print effective username
+      debug: var=username
+
+    - name: Print system information
+      debug: var=systemos

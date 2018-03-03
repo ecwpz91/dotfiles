@@ -1,0 +1,5 @@
+---
+# File: ~/.ansible/group_vars/all
+
+username: "{{ lookup('env','USER') }}"
+systemos: "{{ ansible_os_family }}"
