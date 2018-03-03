@@ -8,7 +8,6 @@
   gather_facts: no
   hosts: localhost
   tasks:
-
     - name: Check for existing facts
       stat: path=~/.ansible/facts/localhost
       register: stat_result
