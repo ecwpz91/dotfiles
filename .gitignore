@@ -3,3 +3,4 @@ vault
 .go/PublicPackages/
 .ansible/facts/
 .ansible/tmp/
+.ansible.cfg
