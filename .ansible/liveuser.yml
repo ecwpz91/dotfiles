@@ -1,15 +1,7 @@
 ---
 # File: ~/.ansible/liveuser.yml
 
-# This playbook is used for liveuser
-#
-#  Run playbook:
-#    ansible-playbook liveuser.yml
-#
-#  Example:
-#    ansible-playbook liveuser.yml
-
-- name: Liveuser
+- name: Setup & configuration script
   connection: local
   gather_facts: false
   hosts: localhost
