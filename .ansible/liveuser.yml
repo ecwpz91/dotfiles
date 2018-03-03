@@ -3,11 +3,23 @@
 ---
 # File: ~/.ansible/liveuser.yml
 
-- name: Setup & configuration script
+- name: Setup & config localhost
   connection: local
-  gather_facts: false
+  gather_facts: no
   hosts: localhost
   tasks:
+
+    - name: Check for existing facts
+      stat: path=~/.ansible/facts/localhost
+      register: stat_result
+
+    # - name: Print facts exist parameter
+    #   debug: var=stat_result
+
+    - name: Loading facts first time
+      setup: gather_subset=!all,!any,facter
+      when: stat_result.stat.exists == False
+
     - name: Print effective username
       debug: var=username
 
