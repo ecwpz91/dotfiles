@@ -13,11 +13,12 @@
       stat: path=~/.ansible/facts/localhost
       register: stat_result
 
-    # - name: Print facts exist parameter
-    #   debug: var=stat_result
+    - name: Print facts exist result
+      debug: var=stat_result
+      when: stat_result.stat.exists == False
 
     - name: Loading facts first time
-      setup: gather_subset=!all,!any,facter
+      setup: filter=ansible_os_family
       when: stat_result.stat.exists == False
 
     - name: Print effective username
