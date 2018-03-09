@@ -46,7 +46,7 @@ function system-ansible-vault() {
   local script
 
   if ! python -c 'import passlib' 2>/dev/null; then
-   { printf "\n\%s" "Error: python module missing" >&2; return 1; };
+   { printf "\n%s" "Error: python module missing" >&2; return 1; };
   fi
 
   script="from passlib.handlers.sha2_crypt import sha512_crypt;print sha512_crypt.using(rounds=5000).hash(\"$passwd\")"
@@ -54,46 +54,57 @@ function system-ansible-vault() {
   python -c "$script"
  }
 
+ passlib_hash_file() {
+  local myfile=${1:-}; shift || return 1
+  local mypass
+  local chkstr
+
+  printf "Changing password for %s\n" "$myfile"
+
+  printf "\n%s" "Enter new vault password: "
+  read -s mypass
+
+  printf "\n%s" "Retype new vault password: "
+  read -s chkstr
+
+  if [[ "$mypass" !=  "$chkstr" ]]; then
+   { printf "\n%s" "Error: passwords did not match" >&2; return 1; };
+  fi
+
+  printf "%s\n" "$(passlib_hash_string $mypass)" > "$myfile"
+  printf "\n%s file updated successfully\n" "$myfile"
+ }
+
  set_system_ansible_config_vault_password_file() {
   local myfile=${1:-}
   local myconf=${2:-}; shift 2 || return 1
   local rgxstr
+  local sedcmd
 
   if ! touch "$myconf"; then
-   { printf "\n\%s" "Error: couldn't create file" >&2; return 1; };
-  fi
-
-  if ! cp "$myconf" "$myconf.${RANDOM}"; then
-   { printf "\n\%s" "Error: couldn't backup file" >&2; return 1; };
+   { printf "\n%s" "Error: couldn't create file" >&2; return 1; };
   fi
 
   rgxstr='vault_password_file'
 
-  if ! sed -i '/.*'"$myregx"'.*/c\vault_password_file = '"$myfile" "$myconf"; then
-   printf "vault_password_file = %s" "$myfile" >> "$myconf"
+  if ! cp "$myconf" "$myconf.${RANDOM}"; then
+   { printf "\n%s" "Error: couldn't backup file" >&2; return 1; };
+  fi
+
+  sedcmd=$(printf "sed -i '/.*%s.*/c\\%s = %s' %s" "$rgxstr" "$rgxstr" "$myfile" "$myconf")
+
+  if ! eval $sedcmd 2>/dev/null; then
+   { printf "\n%s" "Error: couldn't modify file" >&2; return 1; };
   fi
  }
 
  main() {
-  local mypass
-  local chkstr
+  local pwfile=${1:-'/etc/ansible/vault'}
+  local syscfg=${2:-'/etc/ansible/ansible.cfg'}
 
   get_system_ansible
-
-  printf "\n\%s" "Changing password for Ansible Vault"
-  printf "\n\%s" "Enter new vault password: "
-  read -s mypass
-
-  printf "\n\%s" "Retype new vault password: "
-  read -s chkstr
-
-  if [[ "$mypass" !=  "$chkstr" ]]; then
-   { printf "\n\%s" "Error: passwords did not match" >&2; return 1; };
-  fi
-
-  printf "%s" "$(passlib_hash_string $mypass)" > /etc/ansible/vault
-
-  # set_system_ansible_config_vault_password_file "/etc/ansible/vault" "/etc/ansible/ansible.cfg"
+  passlib_hash_file "$pwfile"
+  set_system_ansible_config_vault_password_file "$pwfile" "$syscfg"
  }
 
  main "$@"
