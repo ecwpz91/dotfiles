@@ -8,8 +8,9 @@ function system-ansible-vault() {
   local minver
   local patver
   local tmpdir
+  local osrelv
   local ospkgs
-  local osrels
+  local pypkgs
 
   # Get Python version information
   script='import sys; print(sys.version_info[0])'
