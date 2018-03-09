@@ -33,11 +33,11 @@ function system-ansible-vault() {
     curl -LO 'https://bootstrap.pypa.io/get-pip.py' && \
     { [[ $(yum list installed python-setuptools 2>/dev/null) ]] && yum -y upgrade python-setuptools >&2; } && \
     { [[ "${osrelv}" == '7' ]] && yum -y install python-wheel >&2; } && \
-    ospkgs='python2 python-pip python-cryptography python-yaml python-simplejson ansible' && \
+    ospkgs='python2 python-pip python-cryptography python-paramiko python-yaml python-simplejson ansible' && \
     yum -y install $ospkgs && \
     { [[ "${osrelv}" == '7' ]] && python get-pip.py --no-setuptools --no-wheel || python get-pip.py --no-setuptools >&2; } && \
     popd &>/dev/null && rm -rf $tmpdir && \
-    pypkgs='pip cryptography pyyaml simplejson passlib passlib[bcrypt] passlib[argon2] passlib[totp] fastpbkdf2 scrypt ansible' && \
+    pypkgs='pip cryptography paramiko netmiko pyyaml simplejson passlib passlib[bcrypt] passlib[argon2] passlib[totp] fastpbkdf2 scrypt ansible' && \
     pip install --upgrade $pypkgs
   fi
  }
