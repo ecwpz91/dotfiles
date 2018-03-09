@@ -33,7 +33,7 @@ function system-ansible-vault() {
     curl -LO 'https://bootstrap.pypa.io/get-pip.py' && \
     { [[ $(yum list installed python-setuptools 2>/dev/null) ]] && yum -y upgrade python-setuptools >&2; } && \
     { [[ "${osrelv}" == '7' ]] && yum -y install python-wheel >&2; } && \
-    ospkgs='python-pip python-cryptography python-paramiko python-yaml python-simplejson ansible' && \
+    ospkgs='python-pip ansible' && \
     yum -y install $ospkgs && \
     { [[ "${osrelv}" == '7' ]] && python get-pip.py --no-setuptools --no-wheel || python get-pip.py --no-setuptools >&2; } && \
     popd &>/dev/null && rm -rf $tmpdir && \
@@ -72,7 +72,7 @@ function system-ansible-vault() {
    { printf "\n%s" "Error: passwords did not match" >&2; return 1; };
   fi
 
-  printf "%s\n" "$(passlib_hash_string $mypass)" > "$myfile"
+  printf "%s" "$(passlib_hash_string $mypass)" > "$myfile"
   printf "\n%s file updated successfully\n" "$myfile"
  }
 
