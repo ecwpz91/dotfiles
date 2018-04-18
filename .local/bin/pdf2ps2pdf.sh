@@ -5,6 +5,6 @@ pdf2ps2pdf() {
  # Convert all PostScript files to PDF in current directory
  for i in *; do [[ "${i##*.}" == "ps" ]] && ps2pdf $i; done
 
- # Remove all PostScript files in current directory path
+ # Remove all PostScript files in current directory location
  for i in *; do [[ "${i##*.}" == "ps" ]] && rm -rf $i; done
 }
