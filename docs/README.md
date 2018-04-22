@@ -4,7 +4,7 @@ A [dotfile](https://en.wikipedia.org/wiki/Dot-file) (plural dotfiles) is general
 
 Commonly found on Unix-like systems, they provide user specific customization, and are analogous to [Batman's utility belt](https://en.wikipedia.org/wiki/Batman%27s_utility_belt).
 
-To get started on Red Hat and CentOS (YUM), or Fedora (DNF) follow these instructions:
+To get started on Red Hat and CentOS (YUM), or Fedora (DNF) use the instructions below.
 
 ### Install Using Git
 
