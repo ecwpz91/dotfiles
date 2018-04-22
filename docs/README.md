@@ -47,7 +47,7 @@ DIRPATH="${HOME}/github" \
 
 ### No git? No problem!
 
-Open a new terminal to copy & paste the following, which will download and extract the repository into your local "Downloads" folder.
+Open a new terminal to copy & paste the following, which will download and extract the repository into your local `~/Downloads` folder.
 
 ```sh
 DIRPATH="${HOME}/Downloads/dotfiles" \
