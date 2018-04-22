@@ -8,7 +8,7 @@ To get started on Red Hat and CentOS (YUM), or Fedora (DNF) use the instructions
 
 ### Install Using Git
 
-#### 1 Install [Extra Packages for Enterprise Linux (EPEL)](https://fedoraproject.org/wiki/EPEL)
+#### 1 Setup [Extra Packages for Enterprise Linux (EPEL)](https://fedoraproject.org/wiki/EPEL)
 
 #### 2 Install Git on Linux
 
