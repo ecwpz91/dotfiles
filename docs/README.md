@@ -41,6 +41,8 @@ DIRPATH="${HOME}/github" \
 && mkdir -p "${DIRPATH}/${GITUSER}" \
 && pushd "${DIRPATH}/${GITUSER}" &>/dev/null \
 && git clone "${GITREPO}" \
+&& git remote add upstream https://github.com/ecwpz91/dotfiles \
+&& git remote set-url --push upstream no_push \
 && popd  &>/dev/null \
 && unset DIRPATH GITUSER GITREPO ARCHIVE temp
 ```
