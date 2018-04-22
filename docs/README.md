@@ -31,7 +31,7 @@ That's it! Now, you have a [fork](https://help.github.com/articles/fork-a-repo/)
 
 Right now, you have a fork of the `dotfiles` repo, but you don't have the files in that repo on your computer.
 
-Let's create a [clone](https://git-scm.com/docs/git-clone) of your fork locally on your computer.
+Open a new terminal to copy & paste the following, which will create a [clone](https://git-scm.com/docs/git-clone) of your fork locally on your computer.
 
 ```sh
 DIRPATH="${HOME}/github" \
