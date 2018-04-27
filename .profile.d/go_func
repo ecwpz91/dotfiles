@@ -12,7 +12,7 @@ goclean() {
  && ost="$(uname)";ost="${ost,,}_amd64" \
  && cnt="${pkg//[^\/]}"
 
- # Delete the source directory and compiled package file
+ # Delete the source directory and compiled package directory(ies)
  if (("${#cnt}" == "2")); then
   rm -rf "${GOPATH%%:*}/src/${pkg%/*}"
   rm -rf "${GOPATH%%:*}/pkg/${ost}/${pkg%/*}"
