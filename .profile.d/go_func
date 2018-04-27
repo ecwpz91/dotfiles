@@ -1,0 +1,16 @@
+goclean() {
+ local pkg=$1; shift || return 1
+ local cnt
+
+ go clean -i $pkg >/dev/null
+
+ cnt="${pkg//[^\/]}"
+
+ if (("${#cnt}" == "2")); then
+  rm -rf "${GOPATH%%:*}/src/${pkg%/*}"
+ elif (("${#cnt}" > "2")); then
+  rm -rf "${GOPATH%%:*}/src/${pkg%/*/*}"
+ fi
+
+ source ~/.bashrc
+}
