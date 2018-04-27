@@ -5,7 +5,7 @@ goclean() {
  local scr
 
  # Clean removes object files from package source directories (ignore error)
- go clean -i $pkg >/dev/null
+ go clean -i $pkg &>/dev/null
 
  # Set local variables
  [[ "$(uname -m)" == "x86_64" ]] \
