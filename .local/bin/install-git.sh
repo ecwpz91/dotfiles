@@ -8,8 +8,8 @@ install-git() {
  curl -L 'https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.0.tar.gz' |
  tar -xzf - -C ~/.local/share/git --strip 1
 
- pushd ~/.local/share/git >/dev/null
+ pushd ~/.local/share/git &>/dev/null
  make prefix=~/.local all doc info
  make prefix=~/.local install install-doc install-html install-info
- popd >/dev/null
+ popd &>/dev/null
 }
