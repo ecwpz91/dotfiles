@@ -1,1 +1,0 @@
-alias go-clean='go clean -i && source ~/.bashrc'

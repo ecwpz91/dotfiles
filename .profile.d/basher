@@ -1,2 +1,0 @@
-export BASHER_HOME=
-export PATH=$BASHER_HOME:$PATH

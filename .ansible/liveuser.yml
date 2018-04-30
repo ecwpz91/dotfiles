@@ -1,0 +1,25 @@
+---
+# File: ~/.ansible/liveuser.yml
+
+- name: Setup & config localhost
+  connection: local
+  gather_facts: no
+  hosts: localhost
+  tasks:
+    - name: Check for existing facts
+      stat: path=~/.ansible/facts/localhost
+      register: stat_result
+
+    - name: Print facts exist result
+      debug: var=stat_result
+      when: stat_result.stat.exists == False
+
+    - name: Loading facts first time
+      setup: filter=ansible_os_family
+      when: stat_result.stat.exists == False
+
+    - name: Print effective username
+      debug: var=username
+
+    - name: Print system information
+      debug: var=systemos
