@@ -1,8 +1,9 @@
+workspace/
+
 profile_tasks.pyc
 vault
+
 .go/PublicPackages/
 .ansible/facts/
 .ansible/tmp/
 .ansible.cfg
-
-workspace/
