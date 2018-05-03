@@ -4,3 +4,5 @@ vault
 .ansible/facts/
 .ansible/tmp/
 .ansible.cfg
+
+workspace/
