@@ -1,9 +1,12 @@
+# Project
 workspace/
 
-profile_tasks.pyc
-vault
-
+# Golang
 .go/PublicPackages/
+
+# Ansible
+.ansible.cfg
+.ansible/callback_plugins/profile_tasks.pyc
 .ansible/facts/
 .ansible/tmp/
-.ansible.cfg
+.ansible/vault
