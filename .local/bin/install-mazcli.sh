@@ -1,7 +1,7 @@
 install-mazcli() {
- local pypkgs
+ pip install --upgrade --user azure-cli pycrypto colorama websocket-client
 
- pypkgs='azure-cli pycrypto colorama websocket-client'
-
- pip install --upgrade --user $pypkgs
+ if [[ -f ~/.local/bin/az ]]; then
+  [[ ! -f ~/.local/bin/azure ]] && ln -s ~/.local/bin/az ~/.local/bin/azure
+ fi
 }
