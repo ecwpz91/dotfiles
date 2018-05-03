@@ -19,26 +19,27 @@ upstream        https://github.com/ecwpz91/dotfiles (fetch)
 upstream        no_push (push)
 ```
 
-### 2 Modify your `master`
+### 4 Modify your `develop`
 
-Get your local `master` [branch](https://git-scm.com/docs/git-branch), up to date:
+Get your local `develop` [branch](https://git-scm.com/docs/git-branch), up to date:
+
+```sh
+git checkout develop
+git fetch upstream
+git merge upstream/develop
+```
+
+Then build your local `develop` branch, make changes, etc.
+
+### 3 Keep your local clone in sync
 
 ```sh
 git fetch upstream
-git checkout master
 git merge upstream/master
+git merge upstream/develop
 ```
 
-Then build your local `master` branch, make changes, etc.
-
-### 3 Keep your `master` in sync
-
-```sh
-git fetch upstream
-git merge upstream/master
-```
-
-### 6 [Commit](https://git-scm.com/docs/git-commit) your `master`
+### 6 [Commit](https://git-scm.com/docs/git-commit) your `develop`
 
 ```sh
 git commit
@@ -46,7 +47,7 @@ git commit
 
 Likely you'll go back and edit, build, test, etc.
 
-### 7 [Push](https://git-scm.com/docs/git-push) your `master`
+### 7 [Push](https://git-scm.com/docs/git-push) your `develop`
 
 When ready to review (or just to establish an offsite backup of your work),
 push your branch to your fork on `github.com`:
@@ -58,7 +59,7 @@ git push
 ### 8 Submit a [pull request](https://github.com/ecwpz91/dotfiles/compare/)
 
 1. Visit your fork at https://github.com/your-username/dotfiles.git
-2. Click the `Compare & Pull Request` button next to your `master` branch.
+2. Click the `Compare & Pull Request` button next to your `develop` branch.
 
 At this point you're waiting on us. We may suggest some changes or improvements
 or alternatives. We'll do our best to review and at least comment within 3
