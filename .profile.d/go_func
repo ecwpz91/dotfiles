@@ -24,3 +24,7 @@ goclean() {
  # Reload the current shell
  source ~/.bashrc
 }
+
+goupdate() {
+ go get -u all
+}
