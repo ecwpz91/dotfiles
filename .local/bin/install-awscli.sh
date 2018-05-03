@@ -1,7 +1,3 @@
 install-awscli() {
- local pypkgs
-
- pypkgs='pip awscli boto boto3'
-
- pip install --upgrade --user $pypkgs
+ pip install --upgrade --user pip awscli boto boto3
 }
