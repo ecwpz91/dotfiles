@@ -1,6 +1,6 @@
 install-git() {
  # [NOTE] Check for system packages and install (if needed)
- # yum -y install curl-devel expat-devel asciidoc xmlto docbook2X
+ # yum -y install curl-devel expat-devel asciidoc xmlto docbook2X openssl-devel
  # ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
 
  [[ ! -d ~/.local/share/git ]] && mkdir -p ~/.local/share/git
