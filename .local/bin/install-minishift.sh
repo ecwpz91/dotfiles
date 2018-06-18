@@ -4,9 +4,9 @@ install-minishift() {
                     usermod -a -G libvirt $USER
                     
                     # Install docker-machine
-                    curl -L https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine \
-                    && chmod +x /tmp/docker-machine \
-                    && sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+                    curl -L https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-`uname -s`-`uname -m` \
+                         -o /usr/local/bin/docker-machine \
+                    && chmod +x /usr/local/bin/docker-machine
                     
                     # Install the KVM binary driver
                     curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-centos7 \
