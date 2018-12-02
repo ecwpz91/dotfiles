@@ -5,4 +5,8 @@ install-maven() {
  | tar -xzf - -C "$HOME/.local/share/maven" --strip 1
 
  ln -s "$HOME/.local/share/maven/bin/mvn" "$HOME/.local.local/bin/mvn"
+
+ # Install bash completion
+ # curl -L 'https://raw.githubusercontent.com/juven/maven-bash-completion/master/bash_completion.bash' \
+ #      -o "$HOME/.profile.d/mvn.sh"
 }
