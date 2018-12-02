@@ -1,0 +1,17 @@
+# Columns
+: '
+PID = process id
+MAIN-CLASS = the "jvm name" but often the entry point class (with used main() method)
+HPCUR = currently used heap memory
+HPMAX = maximum heap memory the jvm can allocate
+NHCUR = currently used non-heap memory (e.g. PermGen)
+NHMAX = maximum non-heap memory the jvm can allocate
+CPU = CPU utilization
+GC = percentage of time spent in garbage collection (~100% means that the process does garbage collection only)
+VM = Shows JVM vendor, java version and release number (S6U37 = Sun JVM 6, Update 37)
+USERNAME = Username which owns this jvm process
+#T = Number of jvm threads
+DL = If !D is shown if the jvm detected a thread deadlock
+'
+
+alias jvmtop="java -classpath $(whereis jvmtop.jar | cut -d ' ' -f 2):$JAVA_HOME/lib/tools.jar com.jvmtop.JvmTop $@"
