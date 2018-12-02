@@ -1,8 +1,8 @@
 install-maven() {
- [[ ! -d ~/.local/share/maven ]] && mkdir -p ~/.local/share/maven
+ [[ ! -d "$HOME/.local/share/maven" ]] && mkdir -p "$HOME/.local/share/maven"
 
- curl -L "http://apache.mesi.com.ar/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz" \
- | tar -xzf - -C ~/.local/share/maven --strip 1
+ curl -L 'http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz' \
+ | tar -xzf - -C "$HOME/.local/share/maven" --strip 1
 
- ln -s ~/.local/share/maven/bin/mvn ~/.local/bin/mvn
+ ln -s "$HOME/.local/share/maven/bin/mvn" "$HOME/.local.local/bin/mvn"
 }
