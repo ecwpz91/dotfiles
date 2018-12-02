@@ -10,3 +10,4 @@ workspace/
 .ansible/facts/
 .ansible/tmp/
 .ansible/vault
+.ansible/inventory/azure.pyc
