@@ -34,6 +34,35 @@ cd2() {
  fi
 }
 
+echo2() {
+ fmt=%s end=\\n IFS=" "
+
+ while [ "$#" -gt 1 ] ; do
+  case "$1" in
+   [!-]*|-*[!ne]*) break ;;
+   *ne*|*en*) fmt=%b end= ;;
+   *n*) end= ;;
+   *e*) fmt=%b ;;
+  esac
+  shift
+ done
+
+ [[ "$fmt" == %b ]] && printf "%b$end" "$*" || printf "%s$end" "$*"
+}
+
+ifaddr() {
+ local ifn=$1; shift || return 1
+
+ printf "%s\n" "$(ip a l "$ifn" | grep 'inet ' | cut -d' ' -f6 | awk -F'/' '{ print $1}')"
+}
+
+lnchk() {
+ for element in $1/*; do
+  [ -h "$element" -a ! -e "$element" ] && echo \"$element\"
+  [ -d "$element" ] && lnchk "$element"
+ done
+}
+
 if [ -d ~/.profile.d ]; then
  ARR=( $HOME/.profile.d/* ) \
   && for i in "${ARR[@]}"; do . "$i"; done \
