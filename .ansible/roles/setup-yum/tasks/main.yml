@@ -1,0 +1,11 @@
+---
+
+- name: Copy yum.cfg file
+  copy:
+    src: ../files/yum.cfg
+    dest: "/etc/dnf/yum.conf"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  become: true

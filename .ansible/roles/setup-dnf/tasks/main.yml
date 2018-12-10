@@ -1,0 +1,11 @@
+---
+
+- name: Copy dnf.cfg file
+  copy:
+    src: ../files/dnf.cfg
+    dest: "/etc/dnf/dnf.conf"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  become: true

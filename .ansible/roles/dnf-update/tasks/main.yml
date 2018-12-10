@@ -1,0 +1,5 @@
+---
+
+- name: Update all packages
+  command: /usr/bin/dnf -y update
+  become: true
