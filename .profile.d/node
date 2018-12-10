@@ -1,1 +1,1 @@
-# export NODE_NO_READLINE='1'
+export NODE_NO_READLINE='1'
