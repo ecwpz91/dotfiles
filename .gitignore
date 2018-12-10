@@ -10,4 +10,5 @@
 .ansible/facts/
 .ansible/tmp/
 .ansible/vault
-.ansible/inventory/azure.pyc
+.ansible/inventory/*.pyc
+.ansible/roles/azure.azure_preview_modules/
