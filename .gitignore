@@ -1,5 +1,5 @@
 # Project
-workspace/
+*workspace*
 
 # Golang
 .go/PublicPackages/
@@ -10,3 +10,5 @@ workspace/
 .ansible/facts/
 .ansible/tmp/
 .ansible/vault
+.ansible/inventory/*.pyc
+.ansible/roles/azure.azure_preview_modules/

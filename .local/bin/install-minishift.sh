@@ -3,6 +3,12 @@ install-minishift() {
 
                     usermod -a -G libvirt $USER
 
+                    # Install docker-machine
+                    curl -L https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-`uname -s`-`uname -m` \
+                         -o /usr/local/bin/docker-machine \
+                    && chmod +x /usr/local/bin/docker-machine
+
+                    # Install the KVM binary driver
                     curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-centos7 \
                          -o /usr/local/bin/docker-machine-driver-kvm \
                     && chmod +x /usr/local/bin/docker-machine-driver-kvm
@@ -31,4 +37,7 @@ install-minishift() {
 
  printf "%s\n" "export MINISHIFT_USERNAME=${MINISHIFT_USERNAME:-}" >> ~/.bashrc  # Red Hat Subscription Manager (RHSM) username
  printf "%s\n" "export MINISHIFT_PASSWORD=${MINISHIFT_PASSWORD:-}" >> ~/.bashrc  # RHSM password
+
+ # Install bash completion
+ # minishift completion bash > ~/.profile.d/minishift.sh
 }

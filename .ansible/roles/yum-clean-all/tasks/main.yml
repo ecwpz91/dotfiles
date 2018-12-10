@@ -1,0 +1,9 @@
+---
+
+- name: Remove cached data
+  command: /usr/bin/yum clean all
+  become: true
+
+- name: Remove cached data directory
+  command: /usr/bin/rm -rf /var/cache/yum
+  become: true

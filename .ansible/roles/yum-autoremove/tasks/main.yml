@@ -1,0 +1,5 @@
+---
+
+- name: Remove all unneeded packages that were originally installed as dependencies
+  command: /usr/bin/yum -y autoremove
+  become: true

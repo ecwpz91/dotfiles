@@ -1,0 +1,5 @@
+---
+
+- name: Update all packages
+  command: /usr/bin/yum -y update
+  become: true

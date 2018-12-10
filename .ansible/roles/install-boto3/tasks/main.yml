@@ -1,0 +1,5 @@
+---
+
+- name: Install boto3 Amazon Web Services (AWS) SDK for Python
+  pip: name=boto3 state=present
+  become: true

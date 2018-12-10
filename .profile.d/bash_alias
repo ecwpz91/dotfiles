@@ -12,3 +12,5 @@ alias lsgroups="grep -o '^[^:]*' /etc/group | sort -d"
 alias md='mkdir -p'
 alias mv='mv -i'
 alias rm='rm -i'
+alias tree='tree -A -C'
+alias stat="stat --format='%A:%a %U:%u %G:%g %C %n'"
