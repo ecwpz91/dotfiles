@@ -11,25 +11,22 @@ set -o noclobber
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 cd2() {
- local OPTIND opt arg dir cmd
- local msg='[-L|[-P [-e]]|h] [dir|file]'
+ arg=() dir= cmd= IFS=" " msg='[-L|[-P [-e]]|-h] [dir|file]'
 
- while getopts ":h" opt; do
-  case $opt in
-   h ) printf "bash: cd2 %s\n" "$msg"
+ while [ "$#" -gt 1 ] ; do
+  case "$1" in
+   -h) printf "%s: cd2 %s\n" "$0" "$msg"
     return 1 ;;
-   \? ) arg="${arg:-}$OPTARG"
-    ;;
+   *) arg+=("$1") ;;
   esac
+  shift
  done
 
- shift $(($OPTIND - 1))
+ [ -f "${1:-}" ] && dir="$(dirname ${1:-})" || dir="${1:A}"
+ [ ! -z "$arg" ] && cmd="cd ${arg[@]} $dir" || cmd="cd $dir"
 
- [ -f "${1:-}" ] && dir="$(dirname ${1:-})" || dir="${1:-}"
- [ ! -z "${arg:-}" ] && cmd="cd -${arg:-} ${dir:-}" || cmd="cd ${dir:-}"
-
- if ! ${cmd:-} 2>/dev/null; then
-  eval ${cmd:-} 2>&1 | head -n 1 | sed 's/\(.*\)cd/cd2/'
+ if ! $cmd 2>/dev/null; then
+  printf "%s: cd2 %s\n" "$0" "$msg"
   return 1
  fi
 }
