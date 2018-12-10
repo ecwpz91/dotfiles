@@ -1,0 +1,5 @@
+---
+
+- name: Install boto Python interface to Amazon Web Services
+  pip: name=boto state=present
+  become: true
