@@ -53,7 +53,29 @@ ifaddr() {
  printf "%s\n" "$(ip a l "$ifn" | grep 'inet ' | cut -d' ' -f6 | awk -F'/' '{ print $1}')"
 }
 
-lnchk() {
+cmdchk() {
+ local cmd=$1; shift || return 1
+
+ type "$cmd" &>/dev/null || return 1
+}
+
+envchk() {
+ local var=$1; shift || return 1
+ local msg
+
+ if [ -n "${var-}" ]; then
+  msg='Not empty'
+ elif [ "${var+defined}" = defined ]; then
+  msg='Empty but defined'
+ else
+  msg='Unset'
+ fi
+
+ printf "%s\n" "$msg"
+}
+
+
+lnkchk() {
  for element in $1/*; do
   [ -h "$element" -a ! -e "$element" ] && echo \"$element\"
   [ -d "$element" ] && lnchk "$element"
