@@ -1,0 +1,6 @@
+---
+
+- name: Install awscli Python command-line interface to Amazon Web Services
+  pip: name=awscli state=present
+  become: true
+  
