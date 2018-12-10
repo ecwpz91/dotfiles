@@ -1,5 +1,5 @@
 # Project
-workspace/
+*workspace*
 
 # Golang
 .go/PublicPackages/
