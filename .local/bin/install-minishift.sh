@@ -29,11 +29,13 @@ install-minishift() {
   #      https://developers.redhat.com/download-manager/file/cdk-3.0.beta-minishift-linux-amd64 -O /usr/bin/minishift
 
  # Install Minishift binary
- mv ~/Downloads/cdk-3.3.0-1-minishift* ~/.local/bin/minishift
+ mv ~/Downloads/cdk-3.8.0-2-minishift* ~/.local/bin/minishift
 
  # Configure Minishift
- minishift config set cpus 2
- minishift config set memory 4096
+minishift config set vm-driver virtualbox
+minishift config set disk-size 10GB
+minishift config set cpus 2
+minishift config set memory 4096
 
  printf "%s\n" "export MINISHIFT_USERNAME=${MINISHIFT_USERNAME:-}" >> ~/.bashrc  # Red Hat Subscription Manager (RHSM) username
  printf "%s\n" "export MINISHIFT_PASSWORD=${MINISHIFT_PASSWORD:-}" >> ~/.bashrc  # RHSM password
