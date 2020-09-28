@@ -15,7 +15,7 @@ install-minikube() {
                     && chmod +x /usr/local/bin/docker-machine-driver-kvm2
  '
 
- curl -L 'https://github.com/kubernetes/minikube/releases/download/v0.30.0/minikube-linux-amd64' \
+ curl -L 'https://github.com/kubernetes/minikube/releases/download/v0.35.0/minikube-linux-amd64' \
       -o "$HOME/.local/bin/minikube" \
  && chmod +x "$HOME/.local/bin/minikube"
 
