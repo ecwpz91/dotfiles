@@ -1,4 +1,4 @@
 install-helm() {
- curl -L 'https://storage.googleapis.com/kubernetes-helm/helm-v2.12.3-linux-amd64.tar.gz' \
+ curl -L 'https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz' \
  | tar -xvzf - -C "$HOME/.local/bin" --strip 1 &>/dev/null
 }
