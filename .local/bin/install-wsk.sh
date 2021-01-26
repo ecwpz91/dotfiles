@@ -1,5 +1,5 @@
 install-wsk() {
- curl -L 'https://github.com/apache/incubator-openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-amd64.tgz' \
+ curl -L 'https://github.com/apache/openwhisk-cli/releases/download/1.1.0/OpenWhisk_CLI-1.1.0-linux-amd64.tgz' \
  | tar -xvzf - -C "$HOME/.local/bin" wsk &>/dev/null
 
  # Install bash completion
