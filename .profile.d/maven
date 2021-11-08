@@ -2,4 +2,4 @@
 # export M2_HOME=
 export MAVEN_HOME=
 export PATH=$MAVEN_HOME/bin:$PATH
-export MAVEN_OPTS='-Xms256m -Xmx512m'
+export MAVEN_OPTS='-Xms256m -Xmx512m --add-modules=java.se'
