@@ -1,2 +1,2 @@
-export NPM_CONFIG_PREFIX=$HOME/.npm
+export NPM_CONFIG_PREFIX=$HOME/.npm-global
 export PATH=$NPM_CONFIG_PREFIX/bin:$PATH
