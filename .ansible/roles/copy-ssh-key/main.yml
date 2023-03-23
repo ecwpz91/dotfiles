@@ -1,0 +1,31 @@
+---
+- name: Touch a test file and set permissions on the content server
+  file:
+    path: /tmp/file.txt
+    owner: root
+    group: root
+    mode: 0640
+    state: touch
+
+#   Commented out due to believeing that you already have a key created for the content system
+# - name: Generate RSA host key for ansible
+#   command: ssh-keygen -q -t rsa -N '' -C '' -f ~/.ssh/ansible
+
+- name: Get content of public ssh key from content server
+  slurp:
+    src: "{{ ansible_public_key_file }}"
+  register: pubsshkey
+
+# - debug: msg="RSA public key is {{ pubsshkey.content | b64decode }}"
+
+- name: Add add public key to authorized key file for each system (including content server itself)
+  ansible.builtin.lineinfile:
+    path: ~/.ssh/authorized_keys
+    line: "{{ pubsshkey.content | b64decode }}"
+    create: yes
+
+- name: Synchronization of file on delegate host to dest on the current inventory host
+  ansible.posix.synchronize:
+    src: /tmp/file.txt
+    dest: /tmp/file-dest.txt
+    private_key: "{{ ansible_public_key_file }}"
