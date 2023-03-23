@@ -6,20 +6,84 @@
   gather_facts: no
   hosts: localhost
   tasks:
-    - name: Check for existing facts
-      stat: path=~/.ansible/facts/localhost
-      register: stat_result
+    # - name: Check for existing facts
+    #   stat: path=~/.ansible/facts/localhost
+    #   register: stat_result
+    #
+    # - name: Print facts exist result
+    #   debug: var=stat_result
+    #   when: stat_result.stat.exists == False
+    #
+    # - name: Loading facts first time
+    #   setup: filter=ansible_os_family
+    #   when: stat_result.stat.exists == False
+    #
+    # - name: Print effective username
+    #   debug: var=username
+    #
+    # - name: Print system information
+    #   debug: var=systemos
 
-    - name: Print facts exist result
-      debug: var=stat_result
-      when: stat_result.stat.exists == False
+    # - name: get nexus pod name
+    #   shell: "{{ openshift_cli }} get pods --field-selector=status.phase=Running --no-headers -o custom-columns=\":metadata.name\" -n {{ nexus_project_name }}| grep nexus"
+    #   register: pnresult
 
-    - name: Loading facts first time
-      setup: filter=ansible_os_family
-      when: stat_result.stat.exists == False
+    # - debug: var=pnresult.stdout_lines
 
-    - name: Print effective username
-      debug: var=username
+    # - name: get nexus admin password
+    #   shell: "{{ openshift_cli }} exec {{ pnresult.stdout_lines[0] }} cat /nexus-data/admin.password"
+    #   register: pwresult
 
-    - name: Print system information
-      debug: var=systemos
+    # - debug: var=pwresult.stdout_lines[0]
+
+    # - name: Log into RH SSO API
+    #   uri:
+    #     url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
+    #     body_format: form-urlencoded
+    #     method: POST
+    #     body:
+    #       grant_type: refresh_token
+    #       client_id: rhsm-api
+    #       refresh_token: "{{ rhsm_api_token }}"
+    #   register: rh_sso_reg
+
+    # - name: Download from Red Hat Customer Portal
+    #   redhat_csp_download:
+    #     dest: "{{ mta_zipfile }}"
+    #     url: "{{ mta_download_url }}"
+    #     username: "{{ rhsm_username }}"
+    #     password: "{{rhsm_password }}"
+
+    # - debug: var=rh_sso_reg.json.access_token
+
+    # - name: "Download latest MTA Zipfile from {{ mta_download_url }}."
+    #   get_url:
+    #     url: "{{ mta_download_url }}"
+    #     dest: "{{ mta_zipfile }}"
+    #     headers:
+    #         Authorization: "Bearer {{ rh_sso_reg.json.access_token }}"
+    #   when:
+    #     - mta_download_url is defined
+
+    # - name: Show command for cisco
+    #   cli_command:
+    #   command: /usr/sbin/ip address show
+    #   register: result
+
+    # - name: Display result to terminal window
+    #   debug: var=result.stdout_lines
+
+    # - name: Save results
+    #   shell: /usr/bin/bash -c printf '%s\n' "{{result.stdout_lines}}" >> /tmp/my_file_printf.csv'
+
+    # - name: Save results of command for cisco to file
+    #   shell: /usr/bin/bash -c 'echo "$(show ip int br)" > /tmp/my_file_echo.csv'
+
+    # - name: Replace saved results whitespace with comma
+    #   shell: /usr/bin/bash -c 'sed -e "s/\s\+/,/g" /tmp/my_file_echo.csv > /tmp/my_file_comma.csv'
+
+    # - name: Store remote CSV file locally for cisco command
+    #   fetch:
+    #     src: /tmp/my_file_comma.csv
+    #     dest: /tmp/my_file-{{ inventory_hostname }}.csv
+    #     flat: yes
