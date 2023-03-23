@@ -1,5 +1,5 @@
 install-oc() {
- curl -L 'https://mirror.openshift.com/pub/openshift-v3/clients/3.9.14/linux/oc.tar.gz' \
+ curl -L 'https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.9.11/openshift-client-linux.tar.gz' \
  | tar -xvzf - -C "$HOME/.local/bin" &>/dev/null
 
  # Install bash completion
